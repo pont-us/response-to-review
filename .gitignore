@@ -1,0 +1,7 @@
+*~
+*.out
+*.aux
+*.log
+*.toc
+responses.pdf
+table.tex

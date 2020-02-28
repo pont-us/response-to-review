@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\frenchspacing
+\usepackage[top=20mm, bottom=30mm, left=30mm, right=30mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{Alegreya} %% Option 'black' gives heavier bold face 
+\renewcommand*\oldstylenums[1]{{\AlegreyaOsF #1}}
+\renewcommand{\baselinestretch}{1.2} 
+\usepackage[utf8]{inputenc}
+\usepackage{tabu,longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor} % better than color
+\usepackage{mdframed}
+\definecolor{shadecolor}{gray}{.7}
+\usepackage{changepage}   % for the adjustwidth environment
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+\urlstyle{sf}
+
+\newenvironment{rcomment}%
+{\begin{mdframed}[linewidth=1pt,linecolor=shadecolor,leftmargin=\dimexpr\leftmargin-2pt\relax, innerleftmargin=4pt,innertopmargin=4pt, skipabove=3pt,skipbelow=3pt ]}%
+{\end{mdframed}}               
+
+\newenvironment{response}%
+{\noindent\ignorespaces}%
+{\bigskip}
+
+\title{Responses to reviewers}
+\author{A. N. Author and A. N. Other}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+[Introduction goes here]
+
+\section{Responses to Reviewer 1}
+
+\begin{rcomment}
+  This is a reviewer comment.
+\end{rcomment}
+  
+\begin{response}
+  This is a response to the comment.
+\end{response}
+
+\section{Responses to Reviewer 2}
+
+\subsection{Major comments}
+
+\begin{rcomment}
+  This is a reviewer comment.
+\end{rcomment}
+
+\begin{response}
+  This is a response.
+\end{response}
+
+\clearpage
+
+\subsection{Minor comments}
+
+\tabulinesep=5pt
+\begin{center}
+\begin{longtabu}to \textwidth{X[1]X[5]X[6]}%{|l|p{90mm}|p{70mm}|}
+%\caption{A simple longtable example}\\
+\hline
+{Lines} & {Annotation/comment} & {Response/action}\\
+\hline
+\endfirsthead
+\multicolumn{3}{l}%
+{\textit{Responses to minor comments by Reviewer 2, continued from
+    previous page}} \\
+\hline
+{Lines} & {Annotation/comment} & {Response/action}\\
+\hline
+\endhead
+\hline
+\hline \multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+\hline
+\endlastfoot
+\input table.tex
+%a & b & c \\
+
+\end{longtabu}
+\end{center}
+
+
+\end{document}

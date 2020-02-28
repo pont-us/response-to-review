@@ -1,0 +1,16 @@
+= A LaTeX template for responding to reviewers
+
+This repository contains a simple LaTeX template and a couple of helper
+scripts for writing responses to reviewer comments on an academic
+manuscript.
+
+The LaTeX file defines environments `\rcomment` and `\response`, designed
+to contain reviewer comments and responses respectively.
+
+For brief, minor comments related to a particular line number (e.g.
+corrections to typographical errors), it is more convenient to present the
+comments and responses in a table. For formatting such tables, the
+repository contains a Python script `makeresp.py` to generate LaTeX
+source code for a table from a lightly formatted text input file.
+
+By Pontus Lurcock, 2020. Released into the public domain.
