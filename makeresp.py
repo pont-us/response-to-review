@@ -25,8 +25,10 @@ def process_file(ifh, ofh):
             line = line.strip()
         if line is None or line.startswith("c "):
             if not first:
-                if cell_response == "":
-                    cell_response = "Done."
+                print(">" + cell_response + "<")
+                if cell_response.strip() in ("", "TODO"):
+                    cell_response = "\\TODO{Write response.}\n"
+                    
                 ofh.write("\\raggedright\\it " + cell_lines + " &\n")
                 ofh.write(cell_comments + "&\n")
                 ofh.write(cell_response + " \\\\\n")

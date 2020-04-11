@@ -1,11 +1,12 @@
-c 123
+c 12
 Comment with line number
 
 r Response to comment
 
-c 456
+c 56
+A comment without a response
+
+c 34
 Another comment with line number
 
 r Another response
-
-

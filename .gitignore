@@ -3,5 +3,7 @@
 *.aux
 *.log
 *.toc
+*.bbl
+*.blg
 responses.pdf
-table.tex
+table-?.tex

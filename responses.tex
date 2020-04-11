@@ -8,6 +8,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tabu,longtable}
 \usepackage{graphicx}
+\usepackage[british]{babel}
+\usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{xcolor} % better than color
 \usepackage{mdframed}
@@ -18,13 +20,15 @@
     pdfborder={0 0 0},
 }
 \urlstyle{sf}
+\usepackage[backgroundcolor=yellow]{todonotes}
+\newcommand{\TODO}[1]{\todo[inline]{\textsf{\textbf{TO DO:} #1}}}
 
 \newenvironment{rcomment}%
-{\begin{mdframed}[linewidth=1pt,linecolor=shadecolor,leftmargin=\dimexpr\leftmargin-2pt\relax, innerleftmargin=4pt,innertopmargin=4pt, skipabove=3pt,skipbelow=3pt ]}%
+{\begin{mdframed}[linewidth=1pt,linecolor=shadecolor,leftmargin=\dimexpr\leftmargin-2pt\relax, innerleftmargin=4pt,innertopmargin=4pt, skipabove=3pt,skipbelow=3pt ]\textbf{Comment: }}%
 {\end{mdframed}}               
 
 \newenvironment{response}%
-{\noindent\ignorespaces}%
+{\noindent\ignorespaces\textbf{Response: }}%
 {\bigskip}
 
 \title{Responses to reviewers}
@@ -38,10 +42,12 @@
 
 \section{Introduction}
 
-[Introduction goes here]
+This is a template for a response to peer reviews of a manuscript submitted
+for publication.
 
 \section{Responses to Reviewer 1}
 
+\subsection{Major comments}
 \begin{rcomment}
   This is a reviewer comment.
 \end{rcomment}
@@ -50,16 +56,14 @@
   This is a response to the comment.
 \end{response}
 
-\section{Responses to Reviewer 2}
-
-\subsection{Major comments}
-
 \begin{rcomment}
-  This is a reviewer comment.
+  This is another reviewer comment.
 \end{rcomment}
-
+  
 \begin{response}
-  This is a response.
+  That comment is clearly stupid.
+
+  \TODO{Make this response more diplomatic.}
 \end{response}
 
 \clearpage
@@ -68,14 +72,13 @@
 
 \tabulinesep=5pt
 \begin{center}
-\begin{longtabu}to \textwidth{X[1]X[5]X[6]}%{|l|p{90mm}|p{70mm}|}
-%\caption{A simple longtable example}\\
+\begin{longtabu}to \textwidth{X[1]X[5]X[6]}
 \hline
 {Lines} & {Annotation/comment} & {Response/action}\\
 \hline
 \endfirsthead
 \multicolumn{3}{l}%
-{\textit{Responses to minor comments by Reviewer 2, continued from
+{\textit{Responses to minor comments by Reviewer 1, continued from
     previous page}} \\
 \hline
 {Lines} & {Annotation/comment} & {Response/action}\\
@@ -86,11 +89,23 @@
 \endfoot
 \hline
 \endlastfoot
-\input table.tex
-%a & b & c \\
+\input table-1.tex
 
 \end{longtabu}
 \end{center}
 
+\section{Responses to Reviewer 2}
+
+\begin{rcomment}
+  This is a reviewer comment.
+\end{rcomment}
+
+\begin{response}
+  This is a response with a citation \citep{author2000article}.
+\end{response}
+
+\bibliographystyle{apalike-refs-custom}
+
+\bibliography{refs}
 
 \end{document}
